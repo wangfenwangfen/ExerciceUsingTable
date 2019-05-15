@@ -7,6 +7,6 @@ Remplissage du tableau ;
 Lecture du tableau;
 Trier un tableau en ordre;
 Recherche un element dans un tableau;
-Inserer un element dans un "tableau"(copy valeur de tableau)
+Inserer un element dans un "tableau"(copy de tableau)
 
 
