@@ -6,17 +6,17 @@ class SelecteurAvecTrieEnOrdre {
 
     int choseBiggest(int[] ints) {
 
-       // TrierTableIntsByOrdreCroissanteWithArrays(ints);
+        // TrierTableIntsByOrdreCroissanteWithArrays(ints);
 
         TierTableIntsByOrdreCroissante(ints);
-        return ints [ints.length -1];
+        return ints[ints.length - 1];
     }
 
     void trierTableIntsByOrdreCroissanteWithArrays(int[] ints) {
         Arrays.sort(ints);
     }
 
-    private void TierTableIntsByOrdreCroissante(int[]ints){
+    private void TierTableIntsByOrdreCroissante(int[] ints) {
         int longueur = ints.length;
         //variable temporaire qui stock la variable pus grande
         int tampon;
@@ -42,7 +42,7 @@ class SelecteurAvecTrieEnOrdre {
         } while (!isSorted);
     }
 
-    void trierTableIntsByOrdreDecroissante(int[] ints){
+    void trierTableIntsByOrdreDecroissante(int[] ints) {
         int longueur = ints.length;
         //variable temporaire qui stock la variable pus grande
         int tampon;
@@ -66,13 +66,13 @@ class SelecteurAvecTrieEnOrdre {
         } while (!isSorted);
     }
 
-    int[] trieDecroissantWithArraysSort(int[]ints){
+    int[] trieDecroissantWithArraysSort(int[] ints) {
 
         //d'abord trier en ordre croissant pour pouvoir reverser
         //TrierTableIntsByOrdreCroissanteWithArrays(ints);
         // To boxed array
-        Integer[] integers = Arrays.stream( ints ).boxed().toArray( Integer[]::new );
-       // Integer[] integers1 = IntStream.of( ints ).boxed().toArray( Integer[]::new );
+        Integer[] integers = Arrays.stream(ints).boxed().toArray(Integer[]::new);
+        // Integer[] integers1 = IntStream.of( ints ).boxed().toArray( Integer[]::new );
 
         /* To boxed list
         List<Integer> integersList  = Arrays.stream( data ).boxed().collect( Collectors.toList() );
@@ -81,6 +81,6 @@ class SelecteurAvecTrieEnOrdre {
         Arrays.sort(integers, Collections.reverseOrder());
 
         //Boxed Arrays Integer to tableau Int
-       return Arrays.stream(integers).mapToInt(Integer::intValue).toArray();
+        return Arrays.stream(integers).mapToInt(Integer::intValue).toArray();
     }
 }
