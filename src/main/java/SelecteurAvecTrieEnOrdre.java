@@ -19,7 +19,7 @@ class SelecteurAvecTrieEnOrdre {
     private void TierTableIntsByOrdreCroissante(int[]ints){
         int longueur = ints.length;
         //variable temporaire qui stock la variable pus grande
-        int tampon = 0;
+        int tampon;
         boolean isSorted;
 
         do {
@@ -29,21 +29,23 @@ class SelecteurAvecTrieEnOrdre {
                 // Teste si 2 éléments successifs sont dans le bon ordre ou non
                 if (ints[i] > ints[i + 1]) {
                     // s'ils ne le sont pas, on échange leurs positions
+                    //stock valeur du ints[i] qui est grand dans tampon
                     tampon = ints[i];
+                    //remplacer la valeur de ints[i] par valeur de element droite ints[i+1] qui est petit
                     ints[i] = ints[i + 1];
-                    //stock element grand dans le tampon
+                    //valeur element petit est traité, now remplacer valeur de ints[i+1] par celui du grand stocké dans tempon
                     ints[i + 1] = tampon;
                     //Des qu'il y rest element à tier, le tableau n'est pas trié
                     isSorted = false;
                 }
             }
-        } while (isSorted == false);
+        } while (!isSorted);
     }
 
     void trierTableIntsByOrdreDecroissante(int[] ints){
         int longueur = ints.length;
         //variable temporaire qui stock la variable pus grande
-        int tampon = 0;
+        int tampon;
         boolean isSorted;
 
         do {
@@ -61,7 +63,7 @@ class SelecteurAvecTrieEnOrdre {
                     isSorted = false;
                 }
             }
-        } while (isSorted == false);
+        } while (!isSorted);
     }
 
     int[] trieDecroissantWithArraysSort(int[]ints){
