@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 class FindTheElementInCollection {
 
@@ -12,7 +13,6 @@ class FindTheElementInCollection {
         return existe;
     }
 
-    //Todo still not finished
     boolean checkIfTheElementExistWithDichonomi(int[] ints, int element) {
 
         int indexDebut = 0;
@@ -45,5 +45,10 @@ class FindTheElementInCollection {
 
     private boolean valueIsBetweenTheFirstAndLast(int elementParam, int[] intsTab) {
         return intsTab[0] < elementParam && elementParam < intsTab[intsTab.length - 1];
+    }
+
+    boolean checkIfElementExistByUsingStream(int[] ints, int element){
+        IntStream stream = Arrays.stream(ints);
+        return stream.anyMatch(number -> number==element);
     }
 }

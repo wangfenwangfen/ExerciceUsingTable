@@ -63,4 +63,15 @@ public class FindElementTest {
 
         assertThat(result).isEqualTo(true);
     }
+
+    @Test
+    public void should_return_true_if_element_exist_using_stream() {
+        int [] ints = {1,2,3,30,99,100,199};
+        FindTheElementInCollection findTheElementInCollection = new FindTheElementInCollection();
+
+        boolean result = findTheElementInCollection.checkIfElementExistByUsingStream(ints, 99);
+
+        assertThat(result).isEqualTo(true);
+    }
+
 }
