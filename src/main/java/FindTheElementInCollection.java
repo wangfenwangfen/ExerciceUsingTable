@@ -13,30 +13,36 @@ class FindTheElementInCollection {
     }
     //Todo still not finished
     boolean checkIfTheElementExistWithDichonomi(int[] ints, int element){
-        boolean exist;
+
         int indexDebut = 0;
         int indexFin = ints.length-1;
         int indexMiddle;
 
-        do {
+        if (element == ints[indexDebut] || element == ints[indexFin]) {
+            return true;
+        }
+        //stillHaveElementsInTab(indexDebut, indexFin) && valueIsBetweenTheFirstAndLast(element, ints)
+        while (stillHaveElementsInTab(indexDebut, indexFin )) {
+
             indexMiddle = (indexDebut+indexFin)/2;
 
-            exist = false;
             if (element == ints[indexMiddle]) {
-                exist = true;
+                return true;
             }
             if (element > ints[indexMiddle]) {
                 indexDebut = indexMiddle;
             }else {
                 indexFin = indexMiddle;
             }
-            System.out.println(ints[indexMiddle]);
-        }while (element!=ints[indexMiddle] && stillHaveElementsInTab(indexDebut, indexFin));
-        return exist;
+        }
+        return false;
     }
 
     private boolean stillHaveElementsInTab(int indexDebut, int indexFin) {
-        return indexFin-indexDebut>=0;
+        return indexFin-indexDebut>1;
     }
 
+   private boolean valueIsBetweenTheFirstAndLast(int elementParam, int[] intsTab){
+       return intsTab[0] < elementParam && elementParam < intsTab[intsTab.length - 1];
+   }
 }
